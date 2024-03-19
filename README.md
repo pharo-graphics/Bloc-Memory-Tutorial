@@ -8,6 +8,6 @@ To make the demo easier to follow and help you if you get lost, we already made 
 ```
 Metacello new
     baseline: 'BlocMemroyTutorial';
-    repository: 'github://pharo-graphics/Bloc-Tutorial-Memory/src';
+    repository: 'github://pharo-graphics/Bloc-Memory-Tutorial/src';
     load
 ```
