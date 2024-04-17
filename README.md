@@ -7,7 +7,7 @@ To make the demo easier to follow and help you if you get lost, we already made 
 
 ```
 Metacello new
-    baseline: 'BlocMemroyTutorial';
+    baseline: 'BlocMemoryTutorial';
     repository: 'github://pharo-graphics/Bloc-Memory-Tutorial/src';
     load
 ```
