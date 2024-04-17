@@ -1,5 +1,5 @@
-This is the code for the memory game booklet that is available on http;//books.pharo.org and whose source is available 
-on [http://github.com/booklet](https://github.com/SquareBracketAssociates/Booklet-BuildingMemoryGameWithBloc).
+This is the code for the memory game booklet that is available on http://books.pharo.org and whose source is available 
+on [http://github.com/booklet](https://github.com/SquareBracketAssociates/Booklet-ASimpleMemoryGame).
 
 ### Loading the Memory Game
 
