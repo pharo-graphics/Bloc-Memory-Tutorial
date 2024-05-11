@@ -27,8 +27,8 @@ Class {
 	#superclass : #BlElement,
 	#instVars : [
 		'card',
-		'faceElement',
-		'backElement'
+		'backElement',
+		'frontElement'
 	],
 	#category : #'Bloc-Memory-Elements'
 }
@@ -53,12 +53,6 @@ MGCardElement class >> inASpace [
 	{ space . card } inspect
 ]
 
-{ #category : #accessing }
-MGCardElement >> backSideLinesColor [
-
-	^ Color paleBlue
-]
-
 { #category : #'visual properties' }
 MGCardElement >> backgroundPaint [
 	"Return a BlPaint that should be used as a background (fill)
@@ -79,7 +73,7 @@ MGCardElement >> beFlippedBack [
 MGCardElement >> beFlippedFace [
 
 	self removeChildren.
-	self addChild: faceElement
+	self addChild: frontElement
 
 ]
 
@@ -96,7 +90,7 @@ MGCardElement >> card: aCard [
 	
 	card := aCard.
 
-	faceElement text: (card symbol asString asRopedText
+	frontElement text: (card symbol asString asRopedText
 		fontSize: self fontPointSize;
 		foreground: self fontColor;
 		yourself).
@@ -152,7 +146,7 @@ MGCardElement >> initialize [
 		size: self cardExtent;
 		yourself.
 
-	faceElement := BlTextElement new.
+	frontElement := BlTextElement new.
 
 	self size: self cardExtent.
 	self layout:
