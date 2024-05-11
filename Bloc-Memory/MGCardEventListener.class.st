@@ -9,7 +9,7 @@ Class {
 	#instVars : [
 		'memoryGame'
 	],
-	#category : #'Bloc-Memory-Elements'
+	#category : #'Bloc-Memory-Events'
 }
 
 { #category : #'mouse handlers' }

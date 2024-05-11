@@ -1,29 +1,14 @@
-"
-I'm a game visual board.
-
-## To open a game 
-
-```
-(MGGameElement onModel: MGGame withNumbers) openInNewSpace
-```
-
-
-## To open a game in a separate native window
-```
-aGameElement := MGGameElement openWithNumber
-```
-"
 Class {
-	#name : #MGGameElement,
+	#name : #MGGameElement2,
 	#superclass : #BlElement,
 	#instVars : [
 		'game'
 	],
-	#category : #'Bloc-Memory-Elements'
+	#category : #'Bloc-Memory-Elements2'
 }
 
 { #category : #example }
-MGGameElement class >> example [
+MGGameElement2 class >> example [
 	<sampleInstance>
 	
 	^ self new memoryGame: MGGame withNumbers; yourself
@@ -31,7 +16,7 @@ MGGameElement class >> example [
 ]
 
 { #category : #example }
-MGGameElement class >> exampleInASpace [
+MGGameElement2 class >> exampleInASpace [
 	<sampleInstance>
 	
 	self openOnModel: MGGame withNumbers inSpace: (BlSpace new extent: 420@420; yourself)
@@ -39,21 +24,21 @@ MGGameElement class >> exampleInASpace [
 ]
 
 { #category : #example }
-MGGameElement class >> exampleInASpaceInAnOSWindow [
+MGGameElement2 class >> exampleInASpaceInAnOSWindow [
 	<sampleInstance>
 	
 	self nativelyOpenOnModel: MGGame withNumbers inSpace: BlSpace new.
 ]
 
 { #category : #opening }
-MGGameElement class >> nativelyOpenOnModel: aModel inSpace: aSpace [
+MGGameElement2 class >> nativelyOpenOnModel: aModel inSpace: aSpace [
 
 	aSpace host: BlOSWindowSDL2Host new.
 	^ self openOnModel: aModel inSpace: aSpace.
 ]
 
 { #category : #'instance creation' }
-MGGameElement class >> onModel: aModel [
+MGGameElement2 class >> onModel: aModel [
 	"(self onModel: MGGame withEmoji) openInNewSpace"
 	"(self onModel: MGGame withEmoji) openInNewSpace"
 	
@@ -61,7 +46,7 @@ MGGameElement class >> onModel: aModel [
 ]
 
 { #category : #'instance creation' }
-MGGameElement class >> onModel: aModel inSpace: aSpace [
+MGGameElement2 class >> onModel: aModel inSpace: aSpace [
 
 	| game |
 	game := self onModel: aModel.
@@ -70,7 +55,7 @@ MGGameElement class >> onModel: aModel inSpace: aSpace [
 ]
 
 { #category : #opening }
-MGGameElement class >> openOnModel: aModel inSpace: aSpace [
+MGGameElement2 class >> openOnModel: aModel inSpace: aSpace [
 
 	| game |
 	game := self onModel: aModel inSpace: aSpace.
@@ -80,10 +65,10 @@ MGGameElement class >> openOnModel: aModel inSpace: aSpace [
 ]
 
 { #category : #example }
-MGGameElement class >> openWithNumber [
+MGGameElement2 class >> openWithNumber [
 	<script>
 	| aGameElement space |
-	aGameElement := MGGameElement new
+	aGameElement := MGGameElement2 new
 		                memoryGame: MGGame withNumbers;
 		                yourself.
 	space := BlSpace new.
@@ -93,11 +78,11 @@ MGGameElement class >> openWithNumber [
 ]
 
 { #category : #example }
-MGGameElement class >> openWithNumberNoHost [
+MGGameElement2 class >> openWithNumberNoHost [
 
 	<script>
 	| aGameElement space |
-	aGameElement := MGGameElement new
+	aGameElement := MGGameElement2 new
 		                memoryGame: MGGame withNumbers;
 		                yourself.
 	space := BlSpace new.
@@ -107,7 +92,7 @@ MGGameElement class >> openWithNumberNoHost [
 ]
 
 { #category : #initialization }
-MGGameElement >> initialize [
+MGGameElement2 >> initialize [
 
 	super initialize.
 	self background: Color veryLightGray.
@@ -120,13 +105,13 @@ MGGameElement >> initialize [
 ]
 
 { #category : #accessing }
-MGGameElement >> memoryGame [
+MGGameElement2 >> memoryGame [
 
 	^ game
 ]
 
 { #category : #accessing }
-MGGameElement >> memoryGame: aGame [
+MGGameElement2 >> memoryGame: aGame [
 
 	| aCardEventListener |
 	game := aGame.
@@ -140,7 +125,7 @@ MGGameElement >> memoryGame: aGame [
 	game availableCards do: [ :aCard | 
 		| cardElement |
 		cardElement :=
-			MGCardElement new
+			MGCardElement2 new
 				card: aCard;
 				addEventHandler: aCardEventListener;
 				yourself.

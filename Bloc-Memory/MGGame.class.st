@@ -140,7 +140,6 @@ MGGame >> matchesCount [
 
 { #category : #actions }
 MGGame >> resetStep [
-	""
 	
 	| lastCard |
 	lastCard := self chosenCards last.
