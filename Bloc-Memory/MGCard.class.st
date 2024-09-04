@@ -50,6 +50,16 @@ MGCard >> initialize [
 	flipped := false
 ]
 
+{ #category : #'inspector extensions' }
+MGCard >> inspectCard: aBuilder [
+	<inspectorPresentationOrder: 1 title: 'card'>
+	| builder |
+	builder := StSimpleInspectorBuilder on: aBuilder.
+	builder key: 'card:' value: self symbol.
+
+	^ builder table
+]
+
 { #category : #testing }
 MGCard >> isFlipped [
 	"Return true if card is flipped and its face (symbol) is visible, false otherwise"
